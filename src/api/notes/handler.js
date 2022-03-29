@@ -34,7 +34,7 @@ class NotesHandler {
           status: 'fail',
           message: error.message,
         });
-        response.code(400);
+        response.code(error.statusCode);
         return response;
       }
 
@@ -75,7 +75,7 @@ class NotesHandler {
           status: 'fail',
           message: error.message,
         });
-        response.code(404);
+        response.code(error.statusCode);
         return response;
       }
 
@@ -107,7 +107,7 @@ class NotesHandler {
           status: 'fail',
           message: error.message,
         });
-        response.code(404);
+        response.code(error.statusCode);
         return response;
       }
 
@@ -136,7 +136,7 @@ class NotesHandler {
           status: 'fail',
           message: 'Catatan gagal dihapus. Id tidak ditemukan',
         });
-        response.code(404);
+        response.code(error.statusCode);
         return response;
       }
 
